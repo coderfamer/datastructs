@@ -7,6 +7,8 @@
 int main()
 {
     SList s;
+    s.CreateElems(10);
+    s.debug();
 
     return 0;
 }

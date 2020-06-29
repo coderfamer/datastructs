@@ -1,15 +1,25 @@
 
 
-typedef struct _node {
+class Node{
+public:
+    Node(void *data_ = (void *)0,Node *next_ = nullptr) {
+        data = data_;
+        next = next_;
+    }
     void *data;
-    struct _node *next;
-}Node;
+    Node *next;
+};
 
 class SList
 {
 public:
-    SList() :node(nullptr) { }
-    SList(int n);
+    SList() : _head(nullptr), _size(0){}
+    //~SList();
+
+    void CreateElems(int n);
+
+    void debug();
 private:
-    Node *node;
+    Node * _head;
+    uint _size;
 };
