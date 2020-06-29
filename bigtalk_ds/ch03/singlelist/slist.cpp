@@ -8,16 +8,15 @@ using std::endl;
 void SList::CreateElems(int n ) 
 {
     for (int i = 0; i < n; i++) {
-        Node *p = _head;
         uint num = rand() % 100 + 1;
         if (_head == nullptr) {
             _head = new Node((void *)num);
         } else {
-            if (p->next == nullptr) {
-                p = new Node(&num);
-                _size += 1;
+            Node *p = new Node((void *)num);
+            if (p) {
+                p->next = _head;
+               _head = p;
             }
-            p = p->next;
         }      
 
         int b = 0;
